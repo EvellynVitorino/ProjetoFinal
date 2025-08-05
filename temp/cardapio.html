@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardápio | Casa de Bolos</title>
+  <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+  <header>
+    <h1>🍰 Cardápio</h1>
+    <nav>
+  <ul>
+    <li><a href="telainicial.html">Home</a></li>
+    <li><a href="#">Sabores</a></li>
+    <li><a href="#">Encomendas</a></li>
+    <li><a href="#">Contato</a></li>
+    <li><a href="login_cadastro.html">Perfil</a></li>
+    <li><a href="login_cadastro.html">Cadastro</a></li>
+  </ul>
+  <a href="#" class="btn">Pedir Agora</a>
+</nav>
+  </header>
+
+  <main>
+    <div class="filtros">
+      <button onclick="filtrar('todos')">Todos</button>
+      <button onclick="filtrar('caseiro')">Caseiros</button>
+      <button onclick="filtrar('personalizado')">Personalizados</button>
+    </div>
+
+    <section class="cardapio">
+      <div class="bolo caseiro">
+        <img src="images/bolo-fuba.jpg" alt="Bolo de Fubá com Erva-Doce">
+        <h2>Bolo de Fubá com Erva-Doce</h2>
+        <p>Tradicional, fofinho e com aquele toque especial da vovó.</p>
+        <span class="preco">R$ 25,00</span>
+        <a href="pedido.html" class="btn-pedido">Fazer Pedido</a>
+      </div>
+
+      <div class="bolo caseiro">
+        <img src="images/bolo-cenoura.jpg" alt="Bolo de Cenoura com Chocolate">
+        <h2>Bolo de Cenoura com Calda de Chocolate</h2>
+        <p>Caseiro, úmido e irresistível. Pode ser decorado com confeitos.</p>
+        <span class="preco">R$ 30,00</span>
+        <a href="pedido.html" class="btn-pedido">Fazer Pedido</a>
+      </div>
+
+      <div class="bolo personalizado">
+        <img src="images/bolo-chocolate.jpg" alt="Bolo de Chocolate com Brigadeiro">
+        <h2>Bolo de Chocolate com Recheio de Brigadeiro</h2>
+        <p>Ideal para aniversários, com cobertura personalizada.</p>
+        <span class="preco">R$ 45,00</span>
+        <a href="pedido.html" class="btn-pedido">Fazer Pedido</a>
+      </div>
+
+      <div class="bolo personalizado">
+        <img src="images/bolo-personalizado.jpg" alt="Bolo Personalizado">
+        <h2>Bolo Personalizado</h2>
+        <p>Escolha o sabor, recheio e decoração! Ideal para datas especiais.</p>
+        <span class="preco">A partir de R$ 60,00</span>
+        <a href="pedido.html" class="btn-pedido">Fazer Pedido</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Casa de Bolos | Feito com carinho 💕</p>
+  </footer>
+
+  <script>
+    function filtrar(tipo) {
+      const bolos = document.querySelectorAll('.bolo');
+      bolos.forEach(bolo => {
+        if (tipo === 'todos' || bolo.classList.contains(tipo)) {
+          bolo.style.display = 'block';
+        } else {
+          bolo.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

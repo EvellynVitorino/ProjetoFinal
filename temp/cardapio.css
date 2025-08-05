@@ -1,0 +1,112 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffaf5;
+  color: #5c3d2e;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color:  #f5d1d5;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #5c3d2e;
+  font-weight: bold;
+}
+
+.filtros {
+  text-align: center;
+  margin: 20px;
+}
+
+.filtros button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color:#d65c78 ;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filtros button:hover {
+  background-color: #e6b07e;
+}
+
+.cardapio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.bolo {
+  background-color: #fff;
+  border: 2px solid #f7c59f;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.bolo img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.bolo h2 {
+  margin-top: 0;
+  color: #5c3d2e;
+}
+
+.bolo p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.preco {
+  font-weight: bold;
+  color: #8b0000;
+  font-size: 18px;
+}
+
+.btn-pedido {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #d65c78;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pedido:hover {
+  background-color: #a0522d;
+}
+
+footer {
+  background-color: #f7c59f;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+ nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6e4c3c;
+      font-weight: bold;
+    }
