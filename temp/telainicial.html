@@ -1,11 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa de Bolos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      background-color: #fff8f2;
+      color: #6e4c3c; /* marrom claro */
+      padding-top: 180px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #f5d1d5; /* rosa antigo */
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #6e4c3c;
+    }
+
+    nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6e4c3c;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #d65c78; /* rosa queimado */
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #c34d6a;
+    }
+  
+.banner {
+  padding: 150px 20px 80px;
+  text-align: center;
+  color: #fff;
+  background-image: url('https://img.freepik.com/fotos-gratis/quadro-de-ingredientes-alimentares-para-assar-em-um-fundo-pastel-suavemente-rosa-cozinhar-postura-plana-com-espaco-de-copia-vista-do-topo-conceito-de-cozimento-postura-plana_127032-2200.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+    .banner h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0), 
+    }
+
+    footer {
+      background: #fcedda; /* bege claro */
+      text-align: center;
+      padding: 40px 20px;
+      color: #6e4c3c;
+      font-size: 0.9em;
+    }
+
+    footer form {
+      margin-top: 20px;
+    }
+
+    footer input {
+      padding: 10px;
+      width: 250px;
+      margin-right: 10px;
+    }
+
+    footer button {
+      padding: 10px 20px;
+      background: #d65c78;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 <body>
-    
+  <header>
+    <div class="logo">🍰 Doce & Encanto</div>
+    <nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Sabores</a></li>
+    <li><a href="#">Encomendas</a></li>
+    <li><a href="#">Contato</a></li>
+    <li><a href="login_cadastro.html">Perfil</a></li>
+    <li><a href="login_cadastro.html">Cadastro</a></li>
+  </ul>
+  <a href="#" class="btn">Pedir Agora</a>
+</nav>
+
+  </header>
+
+  <section class="banner">
+    <h1>Bolos que aquencem o coração!</h1>
+    <a href="#" class="btn">Veja nosso cardápio</a>
+  </section>
+
+  <footer>
+    <p>📍 Canguaretama, RN | 📞 (84) 0000-0000</p>
+    <p>Siga-nos: Instagram | Facebook | WhatsApp</p>
+    <form>
+      <label for="email">Receba receitas e novidades:</label><br>
+      <input type="email" id="email" placeholder="Seu e-mail">
+      <button type="submit">Assinar</button>
+    </form>
+  </footer>
 </body>
 </html>
+

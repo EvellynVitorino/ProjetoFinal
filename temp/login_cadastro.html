@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login e Cadastro</title>
+  <link rel="stylesheet" href="login_cadastro.css">
+</head>
+<body>
+  <div class="container" id="form-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" required />
+      </div>
+      <div class="form-group">
+        <label>Senha:</label>
+        <input type="password" required />
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <div class="toggle-link" onclick="mostrarCadastro()">Ainda não tem conta? Cadastre-se</div>
+  </div>
+  <script>
+    function mostrarCadastro() {
+      document.getElementById('form-container').innerHTML = `
+        <h2>Cadastro</h2>
+        <form id="cadastro-form">
+          <div class="form-group">
+            <label>Nome:</label>
+            <input type="text" required />
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" required />
+          </div>
+          <div class="form-group">
+            <label>Senha:</label>
+            <input type="password" required />
+          </div>
+          <div class="form-group">
+            <label>Telefone:</label>
+            <input type="tel" required />
+          </div>
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+        <div class="toggle-link" onclick="mostrarLogin()">Já tem conta? Faça login</div>
+      `;
+    }
+    function mostrarLogin() {
+      location.reload(); // Para fins de exemplo simples
+    }
+  </script>
+</body>
+</html>
