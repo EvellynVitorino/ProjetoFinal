@@ -1,0 +1,72 @@
+/* cliente-area.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #fff8f0;
+  padding: 20px;
+}
+
+header {
+  background-color:  #d65c78;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+section {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h3 {
+  color: #8B4513;
+}
+
+button {
+  background-color:  #d65c78;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #a0522d;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #5a3e2b;
+}
+.status-pedidos table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.status-pedidos th, .status-pedidos td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.status-pedidos th {
+  background-color: #f2e4d5;
+  color: #5a3e2b;
+}
+
+.status-pedidos td.status {
+  font-weight: bold;
+}
+
+.status.recebido { color: #555; }
+.status.producao { color: #d2691e; }
+.status.pronto { color: #228B22; }
+.status.entregue { color: #4682B4; }

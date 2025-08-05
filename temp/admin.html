@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <h1>Painel do Administrador</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li onclick="mostrarSecao('usuarios')">Usuários</li>
+      <li onclick="mostrarSecao('produtos')">Produtos</li>
+      <li onclick="mostrarSecao('encomendas')">Encomendas</li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="usuarios" class="secao">
+      <h2>Gerenciar Usuários</h2>
+      <p>Lista de usuários cadastrados aparecerá aqui.</p>
+    </section>
+
+    <section id="produtos" class="secao" style="display:none;">
+      <h2>Gerenciar Produtos</h2>
+      <p>Lista de bolos e opções para editar ou remover.</p>
+    </section>
+
+    <section id="encomendas" class="secao" style="display:none;">
+      <h2>Encomendas Recebidas</h2>
+
+      <label for="filtro-data">Filtrar por data:</label>
+      <input type="date" id="filtro-data" onchange="filtrarPorData()">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Data</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-encomendas">
+          <!-- Conteúdo gerado via JavaScript -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Botão de sair -->
+<div style="text-align: center; margin-top: 2rem;">
+  <button class="botao-sair" onclick="logout()">Sair</button>
+</div>
+
+
+
+  <script>
+    function mostrarSecao(secaoId) {
+      const secoes = document.querySelectorAll('.secao');
+      secoes.forEach(secao => secao.style.display = 'none');
+      document.getElementById(secaoId).style.display = 'block';
+    }
+
+    function logout() {
+      alert("Você saiu do painel.");
+      window.location.href = "login.html";
+    }
+
+    const encomendas = [
+      { cliente: "Ana", produto: "Bolo de Chocolate", data: "2025-08-05", status: "Recebido" },
+      { cliente: "Carlos", produto: "Bolo de Fubá", data: "2025-08-04", status: "Pronto" },
+      { cliente: "Beatriz", produto: "Bolo de Cenoura", data: "2025-08-03", status: "Entregue" }
+    ];
+
+    function renderizarEncomendas(lista) {
+      const tabela = document.getElementById("tabela-encomendas");
+      tabela.innerHTML = "";
+
+      lista.forEach((encomenda, index) => {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>${encomenda.cliente}</td>
+          <td>${encomenda.produto}</td>
+          <td>${encomenda.data}</td>
+          <td>
+            <select onchange="alterarStatus(${index}, this.value)">
+              <option value="Recebido" ${encomenda.status === "Recebido" ? "selected" : ""}>Recebido</option>
+              <option value="Pronto" ${encomenda.status === "Pronto" ? "selected" : ""}>Pronto</option>
+              <option value="Entregue" ${encomenda.status === "Entregue" ? "selected" : ""}>Entregue</option>
+            </select>
+          </td>
+        `;
+        tabela.appendChild(linha);
+      });
+    }
+
+    function alterarStatus(index, novoStatus) {
+      encomendas[index].status = novoStatus;
+      renderizarEncomendas(encomendas);
+    }
+
+    function filtrarPorData() {
+      const dataSelecionada = document.getElementById("filtro-data").value;
+      if (!dataSelecionada) {
+        renderizarEncomendas(encomendas);
+        return;
+      }
+      const filtradas = encomendas.filter(e => e.data === dataSelecionada);
+      renderizarEncomendas(filtradas);
+    }
+
+    // Inicializa a tabela
+    renderizarEncomendas(encomendas);
+  </script>
+</body>
+</html>

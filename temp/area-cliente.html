@@ -1,0 +1,96 @@
+<!-- cliente-area.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Cliente - Casa de Bolos</title>
+  <link rel="stylesheet" href="area-cliente.css">
+</head>
+<body>
+  <header>
+    <h1>Área do Cliente</h1>
+  </header>
+
+  <section class="boas-vindas">
+    <h2 id="saudacao">Olá, Cliente!</h2>
+  </section>
+
+  <section class="dados-pessoais">
+    <h3>Seus Dados</h3>
+    <p><strong>Nome:</strong> <span id="nome-cliente">---</span></p>
+    <p><strong>Email:</strong> <span id="email-cliente">---</span></p>
+    <p><strong>Telefone:</strong> <span id="telefone-cliente">---</span></p>
+    <button onclick="editarDados()">Editar Dados</button>
+  </section>
+
+  <section class="historico">
+    <h3>Histórico de Encomendas</h3>
+    <ul id="lista-encomendas">
+      <li>Bolo de Chocolate - 02/08/2025</li>
+      <li>Bolo de Fubá - 28/07/2025</li>
+    </ul>
+  </section>
+
+  <section class="status-pedidos">
+    <h3>Status dos Seus Pedidos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Data</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-status">
+        <!-- Conteúdo gerado via JavaScript -->
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <button onclick="logout()">Sair</button>
+    <p>&copy; 2025 Casa de Bolos</p>
+  </footer>
+
+  <!-- 🔽 JavaScript embutido -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nome = localStorage.getItem("usuario") || "Cliente";
+      const email = localStorage.getItem("email") || "cliente@email.com";
+      const telefone = localStorage.getItem("telefone") || "(00) 00000-0000";
+
+      document.getElementById("saudacao").textContent = `Olá, ${nome}!`;
+      document.getElementById("nome-cliente").textContent = nome;
+      document.getElementById("email-cliente").textContent = email;
+      document.getElementById("telefone-cliente").textContent = telefone;
+
+      const pedidos = [
+        { produto: "Bolo de Chocolate", data: "02/08/2025", status: "Recebido" },
+        { produto: "Bolo de Fubá", data: "28/07/2025", status: "Pronto para retirada" },
+        { produto: "Bolo de Cenoura", data: "25/07/2025", status: "Entregue" }
+      ];
+
+      const tabela = document.getElementById("tabela-status");
+
+      pedidos.forEach(pedido => {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>${pedido.produto}</td>
+          <td>${pedido.data}</td>
+          <td class="status ${pedido.status.toLowerCase().replace(/ /g, '')}">${pedido.status}</td>
+        `;
+        tabela.appendChild(linha);
+      });
+    });
+
+    function editarDados() {
+      alert("Função de edição ainda em desenvolvimento.");
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+  background-color:  #d65c78;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+  list-style: none;
+  background-color:  #d65c78;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  background-color: #777;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 2rem;
+}
+
+.secao {
+  margin-top: 1rem;
+}
+
+/* Tabela de encomendas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* Campo de filtro */
+#filtro-data {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Botão de sair */
+.botao-sair {
+  background-color:#d65c78 ;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-sair:hover {
+  background-color: #c9302c;
+}
