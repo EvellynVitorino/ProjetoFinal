@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Fazer Pedido | Casa de Bolos</title>
+  <link rel="stylesheet" href="pedidos.css">
+  <script>
+    function mostrarCamposPersonalizados() {
+      const tipo = document.getElementById('tipo-bolo').value;
+      const personalizados = document.getElementById('campos-personalizados');
+      if (tipo === 'personalizado') {
+        personalizados.style.display = 'block';
+      } else {
+        personalizados.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🛒 Fazer Pedido</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="pedido.html">Fazer Pedido</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="formulario-pedido" enctype="multipart/form-data">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="telefone">Telefone / WhatsApp:</label>
+      <input type="tel" id="telefone" name="telefone" required>
+
+      <label for="tipo-bolo">Tipo de Bolo:</label>
+      <select id="tipo-bolo" name="tipo-bolo" onchange="mostrarCamposPersonalizados()" required>
+        <option value="">Selecione</option>
+        <option value="caseiro">Caseiro</option>
+        <option value="personalizado">Personalizado</option>
+      </select>
+
+      <label for="sabor">Sabor do Bolo:</label>
+      <input type="text" id="sabor" name="sabor" placeholder="Ex: Cenoura, Fubá, Chocolate..." required>
+
+      <div id="campos-personalizados" style="display: none;">
+        <label for="recheio">Recheio / Cobertura:</label>
+        <input type="text" id="recheio" name="recheio" placeholder="Ex: Brigadeiro, Doce de leite...">
+
+        <label for="mensagem">Mensagem no Bolo:</label>
+        <input type="text" id="mensagem" name="mensagem" placeholder="Ex: Feliz aniversário!">
+
+        <label for="decoracao">Decoração personalizada:</label>
+        <textarea id="decoracao" name="decoracao" rows="3" placeholder="Tema, cores, estilo..."></textarea>
+
+        <label for="imagem-referencia">Imagem de referência:</label>
+        <input type="file" id="imagem-referencia" name="imagem-referencia" accept="image/*">
+      </div>
+
+      <label for="data">Data de Entrega:</label>
+      <input type="date" id="data" name="data" required>
+
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" name="observacoes" rows="4" placeholder="Detalhes extras, alergias, etc."></textarea>
+
+      <button type="submit">Enviar Pedido</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Casa de Bolos | Feito com carinho 💕</p>
+  </footer>
+</body>
+</html>
