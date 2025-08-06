@@ -1,0 +1,68 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #d65c78;
+  color: #6e4c3c;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.contato-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fcedda;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-contato {
+  margin-bottom: 20px;
+}
+
+.info-contato p {
+  margin: 10px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #dcbfb4;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px;
+  background-color: #d65c78;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c34d6a;
+}
+
+.redes {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.redes a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #6e4c3c;
+  font-weight: bold;
+}
